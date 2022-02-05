@@ -37,6 +37,12 @@ def start():
     elif user.lower() == "4":
         print("\n")
         system(f"sudo flatpak search {query}")
+        system(f"sudo apt search {query}")
+        query = input("Enter package to install or 'I' to install a different package: ")
+        if query == "i":
+            start()
+        print("\n")
+        system(f"sudo apt install {query}")
     elif user.lower() == "5":
         print("\n")
         system(f"sudo zap search {query}")
